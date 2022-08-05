@@ -1,5 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import withSplashScreen from "./withSplashScreen";
 
 function App() {
   return (
@@ -15,11 +16,11 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          MrgMeet Patel
         </a>
       </header>
     </div>
   );
 }
 
-export default App;
+export default withSplashScreen(App);
