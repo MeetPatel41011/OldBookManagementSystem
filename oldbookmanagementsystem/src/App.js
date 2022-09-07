@@ -1,25 +1,23 @@
-import logo from "./logo.svg";
 import "./App.css";
 import withSplashScreen from "./withSplashScreen";
+import NavbarCommon from "./components/NavbarCommon";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SellersPage from "./components/SellersPage";
+import Buyerscart from "./components/Buyerscart";
+import MainScreen from "./components/MainScreen";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          MrgMeet Patel
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <NavbarCommon />
+        <Routes>
+          <Route path="/" element={<MainScreen />}></Route>
+          <Route path="SellersPage" element={<SellersPage />}></Route>
+          <Route path="Buyerscart" element={<Buyerscart />}></Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
