@@ -1,7 +1,7 @@
 import React from "react";
 // import NavbarCommon from "./NavbarCommon";
 
-export default function Buyerscart() {
+export default function SignInUser() {
   return (
     <>
       {/* <NavbarCommon /> */}
@@ -13,9 +13,7 @@ export default function Buyerscart() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            MrgMeet Patel
-            <br />
-            Cart Page
+            SignIn Page
           </a>
         </header>
       </div>

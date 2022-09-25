@@ -1,21 +1,16 @@
 import React from "react";
+import "./SellersPage.css";
+import { Button } from "@mui/material";
+import { NavLink } from "react-router-dom";
 
 export default function SellersPage() {
+  
   return (
     <>
-      <div className="App">
-        <header className="App-header">
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            MrgMeet Patel
-            <br />
-            Sell Page
-          </a>
-        </header>
+      <div className="meet">
+        <Button variant="contained">
+          <NavLink to="/login-signup">Add book for sell</NavLink>
+        </Button>
       </div>
     </>
   );

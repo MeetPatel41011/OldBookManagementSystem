@@ -8,14 +8,13 @@ export default function NavbarCommon() {
     <>
       <nav
         className="navbar fixed-top  text-bg-dark navbar-expand-lg"
-        style={{ "background-color": "#00FFFF" }}
+        style={{ "backgroundColor": "#00FFFF" }}
       >
         {/* For dark Navbar add text-bg-dark in uper Nav tag's classNames 
         -Meet Patel*/}
         <div className="container-fluid">
           <NavLink className="navbar-brand" style={{ color: "white" }} to="/">
-            <img src={logo} className="min-logo" alt="logo" /> Old book
-            management system
+            <img src={logo} className="min-logo" alt="logo" /> Old book WebApp
           </NavLink>
           <button
             className="navbar-toggler"
@@ -42,6 +41,11 @@ export default function NavbarCommon() {
               <li className="nav-item">
                 <NavLink className="nav-link" to="Buyerscart">
                   Cart
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="login-signup">
+                  Login/sign Up
                 </NavLink>
               </li>
               <li className="nav-item dropdown">
