@@ -1,0 +1,29 @@
+input[type=text]{
+border: 2px solid;
+height: 40px;
+width: 80%;
+
+}
+
+
+
+Button:hover{
+color: cyan;
+/* margin-left: 20px;
+margin-right: 20px; */
+
+}
+
+Button{
+margin-left: 10px;
+margin-right: 10px;
+color: black;
+}
+
+
+::placeholder {
+  color: black;
+  opacity: 1; 
+  font-size: 15px;
+  /* padding: 60px; */
+}

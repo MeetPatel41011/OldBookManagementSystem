@@ -18,6 +18,7 @@ import { NavLink } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
+import "./LoginComponent.css";
 
 export default function LoginCard() {
   const [isSignedIn, setIsSignedIn] =
@@ -28,14 +29,18 @@ export default function LoginCard() {
   const navigate = useNavigate();
   
 
-
-
+  
 
   const RegisterUser = () => {
     if (validateEmail(email)) {
-
+      
     } else {
-      //alert(email + " is not valid :(");
+      alert("Email id is not valid please check it once.");
+      var flag = false;
+    }
+    if (password === "") {
+      alert("Please enter a Password.");
+      var flag = false;
     }
     createUserWithEmailAndPassword(authentication, email, password)
       .then((re) => {
@@ -43,71 +48,93 @@ export default function LoginCard() {
         navigate("/RegisterPage");
       })
       .catch((err) => {
-        //   err = err + "";
-        //   var err2 = err.split("(").pop();
-        //   err = err2.replace(")", "");
-        //   alert(err);
-        // err = "";
+        if (flag === false) {
+          
+        } else {
+           err = err + "";
+           var err2 = err.split("(").pop();
+           err = err2.replace(")", "");
+           alert(err);
+           err = "";
+        }
+         
+        
       });
   };
 
 
   const SignInUser = () => {
     if (validateEmail(email)) {
-      //alert(email + " is valid :)");
-      <SignInUser />;
+     
     } else {
-      alert(email + " is not valid :(");
+      alert("Email id is not valid please check it once.");
     }
+     if (password === "") {
+       alert("Please enter a Password.");
+       var flag = false;
+     }
     signInWithEmailAndPassword(authentication, email, password)
       .then((re) => {
-        //setIsSignedIn(true);
-                navigate("/SignInUser ");
-
+        console.log(re)
+        navigate("/SignInUser");
       })
       .catch((err) => {
-        // err = err + "";
-        // var err2 = err.split("(").pop();
-        // err = err2.replace(")", "");
-
-        // alert(err);
-        // err = "";
+      if (flag === false) {
+      } else {
+        err = err + "";
+        var err2 = err.split("(").pop();
+        err = err2.replace(")", "");
+        alert(err);
+        err = "";
+      };
+        
       });
   };
 
   const SignOutUser = () => {
     signOut(authentication)
       .then((re) => {
+        console.log(re);
         setIsSignedIn(false);
       })
       .catch((err) => {
-        err = err + "";
-        var err2 = err.split("(").pop();
-        err = err2.replace(")", "");
-
-        alert(err);
-        err = "";
+        
+          err = err + "";
+          var err2 = err.split("(").pop();
+          err = err2.replace(")", "");
+          alert(err);
+          err = "";
+        
       });
   };
+ 
+
+
+
 
   const forgotPassword = (Email) => {
     if (validateEmail(email)) {
       //alert(email + " is valid :)");
     } else {
-      alert(email + " is not valid :(");
+      alert("Email id is not valid please check it once.");
     }
-    console.log("reset email sent to " + email);
+   
+    
     sendPasswordResetEmail(authentication, email, null)
-      .then(() => {
-        alert("reset email sent to " + Email);
+      .then((re) => {
+        console.log(re);
+       alert("reset email sent to " + email);
       })
       .catch(function (err) {
-        // err = err + "";
-        // var err2 = err.split("(").pop();
-        // err = err2.replace(")", "");
+      
+        //  err = err + "";
+        //  var err2 = err.split("(").pop();
+        //  err = err2.replace(")", "");
+        //  alert(err);
+        //  err = "";
+       
+         
         
-        // alert(err);
-        // err = "";
       });
   };
 
@@ -123,7 +150,7 @@ export default function LoginCard() {
 //   PASS_LABELS = ["Too Short", "Weak", "Normal", "Strong", "Secure"];
   
   return (
-    <Card sx={{ maxWidth: 1200, minWidth: 500 }}>
+    <Card sx={{ maxWidth: 1200, minWidth: 700 }}>
       {/* { <CardMedia
         component="img"
         height="140"
@@ -139,22 +166,28 @@ export default function LoginCard() {
             placeholder="Email"
             value={email}
             onChangeText={(text) => setEmail(text)}
-            id="standard-basic"
+            //id="standard-basic"
             label="Phone Number / Email Address"
-            variant="standard"
+            //variant="standard"
+            className="textInput"
+            type="text"
           />
         </FormControl>
-
         <br />
         <FormControl fullWidth sx={{ m: 1 }}>
           <TextInput
             placeholder="Password"
             value={password}
-            secureTextEntry={true}
+            //secureTextEntry={true}
             onChangeText={(text) => setPassword(text)}
-            id="standard-basic"
+            //id="standard-basic"
             label="Password"
-            variant="standard"
+            //variant="standard"
+            className="textInput"
+            type="text"
+   
+        
+            
           />
         </FormControl>
         {/* <Typography variant="body2" color="text.secondary">
@@ -162,17 +195,16 @@ export default function LoginCard() {
           species, ranging across all continents except Antarctica
         </Typography> */}
         <br />
-        <br />
 
-        <Button variant="contained" onClick={RegisterUser}>
+        <Button className="contained" onClick={RegisterUser}>
           Register
         </Button>
 
-        <Button variant="contained" onClick={SignInUser}>
- Sign In
+        <Button className="contained" onClick={SignInUser}>
+          Sign In
         </Button>
 
-        <Button variant="contained" onClick={forgotPassword}>
+        <Button className="contained" onClick={forgotPassword}>
           forgotPassword
         </Button>
         {/* {isSignedIn === true ? 
