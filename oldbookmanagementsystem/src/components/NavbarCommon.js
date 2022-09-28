@@ -7,8 +7,8 @@ export default function NavbarCommon() {
   return (
     <>
       <nav
-        className="navbar fixed-top  text-bg-dark navbar-expand-lg"
-        style={{ "backgroundColor": "#00FFFF" }}
+        className="navbar fixed-top text-bg-dark navbar-expand-lg"
+        style={{ backgroundColor: "#00FFFF" }}
       >
         {/* For dark Navbar add text-bg-dark in uper Nav tag's classNames 
         -Meet Patel*/}
@@ -29,8 +29,9 @@ export default function NavbarCommon() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
+              <li class="nav-item">
                 <NavLink
+                  style={{ color: "white" }}
                   className="nav-link"
                   aria-current="page"
                   to="SellersPage"
@@ -39,17 +40,26 @@ export default function NavbarCommon() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="Buyerscart">
+                <NavLink
+                  className="nav-link"
+                  style={{ color: "white" }}
+                  to="Buyerscart"
+                >
                   Cart
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="login-signup">
+                <NavLink
+                  className="nav-link"
+                  style={{ color: "white"}}
+                  to="login-signup"
+                >
                   Login/sign Up
                 </NavLink>
               </li>
-              <li className="nav-item dropdown">
+              {/* <li className="nav-item dropdown">
                 <a
+                  style={{ color: "white" }}
                   className="nav-link dropdown-toggle"
                   href="/"
                   role="button"
@@ -78,7 +88,7 @@ export default function NavbarCommon() {
                     </a>
                   </li>
                 </ul>
-              </li>
+              </li> */}
               {/*<li className="nav-item">
                 <button className="nav-link disabled">Disabled</button>
               </li>*/}

@@ -1,7 +1,8 @@
-.nav-link {
-  color: white;
+.nav-link.active {
+  
+font-weight: bold;
 }
 
-.navbar-brand {
-  color: blue;
+.navbar-brand-dark{
+  color: white;
 }
