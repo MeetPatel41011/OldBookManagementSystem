@@ -1,11 +1,12 @@
 import React from "react";
-// import NavbarCommon from "./NavbarCommon";
+import NavbarCommon from "./NavbarCommon";
+import NavBarComponent2 from "./NavBarComponent2";
 
-export default function RegisterPage() {
+export default function FirstScreen() {
   return (
     <>
-      {/* <NavbarCommon /> */}
-      <div>
+      <NavBarComponent2 />
+      <div className="App">
         <header className="App-header">
           <a
             className="App-link"
@@ -13,7 +14,9 @@ export default function RegisterPage() {
             target="_blank"
             rel="noopener noreferrer"
           >
-           Register Page
+            MrgMeet Patel
+            <br />
+            Main Page
           </a>
         </header>
       </div>

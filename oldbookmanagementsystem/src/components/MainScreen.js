@@ -1,8 +1,11 @@
 import React from "react";
+import NavBarComponent2 from "./NavBarComponent2";
+import NavbarCommon from "./NavbarCommon"
 
-export default function MainScreen() {
+export default function FirstScreen() {
   return (
     <>
+      <NavbarCommon />
       <div className="App">
         <header className="App-header">
           <a

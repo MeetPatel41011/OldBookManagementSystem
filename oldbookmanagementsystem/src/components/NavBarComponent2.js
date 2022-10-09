@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import logo from "./logo.svg";
 import "./NavbarCommon.css";
 
-export default function NavbarCommon() {
+export default function NavBarComponent2() {
   return (
     <>
       <nav
@@ -29,7 +29,7 @@ export default function NavbarCommon() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink
                   style={{ color: "white" }}
                   className="nav-link"
@@ -47,8 +47,8 @@ export default function NavbarCommon() {
                 >
                   Cart
                 </NavLink>
-              </li>
-              {/* <li className="nav-item">
+              </li> */}
+              <li className="nav-item">
                 <NavLink
                   className="nav-link"
                   style={{ color: "white" }}
@@ -56,7 +56,7 @@ export default function NavbarCommon() {
                 >
                   Login/sign Up
                 </NavLink>
-              </li> */}
+              </li>
               {/* <li className="nav-item dropdown">
                 <a
                   style={{ color: "white" }}

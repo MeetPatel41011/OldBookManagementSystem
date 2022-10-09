@@ -1,14 +1,16 @@
 import React from "react";
 // import NavbarCommon from "./NavbarCommon";
 import LoginCard from "./LoginComponent";
-import "./LoginSignUp.css";
+import "./LoginComponent.css";
+import NavBarComponent2 from "./NavBarComponent2";
 
 
 
 export default function LoginSignUp() {
   return (
     <>
-      {/* <NavbarCommon /> */}
+      <NavBarComponent2 />
+
       <div className="center">
         <LoginCard />
       </div>

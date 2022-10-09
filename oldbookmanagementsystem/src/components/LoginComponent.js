@@ -12,105 +12,88 @@ import {
   signOut,
   sendPasswordResetEmail,
 } from "firebase/auth";
-import SignInUser from "./SignInPage";
-import RegisterPage from "./RegisterPage";
-import { NavLink } from "react-router-dom";
-import { Navigate } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
 import "./LoginComponent.css";
 
-export default function LoginCard() {
-  const [isSignedIn, setIsSignedIn] =
-    useState(false);
+export default function LoginCard(props) {
+  const [isSignedIn, setIsSignedIn] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
-  
-
-  
 
   const RegisterUser = () => {
     if (validateEmail(email)) {
-      
     } else {
       alert("Email id is not valid please check it once.");
       var flag = false;
     }
     if (password === "") {
       alert("Please enter a Password.");
-      var flag = false;
+      flag = false;
     }
+
     createUserWithEmailAndPassword(authentication, email, password)
       .then((re) => {
         console.log(re);
-        navigate("/RegisterPage");
+        navigate("/mainscreen");
       })
       .catch((err) => {
         if (flag === false) {
-          
         } else {
-           err = err + "";
-           var err2 = err.split("(").pop();
-           err = err2.replace(")", "");
-           alert(err);
-           err = "";
-        }
-         
-        
-      });
-  };
-
-
-  const SignInUser = () => {
-    if (validateEmail(email)) {
-     
-    } else {
-      alert("Email id is not valid please check it once.");
-    }
-     if (password === "") {
-       alert("Please enter a Password.");
-       var flag = false;
-     }
-    signInWithEmailAndPassword(authentication, email, password)
-      .then((re) => {
-        console.log(re)
-        navigate("/SignInUser");
-      })
-      .catch((err) => {
-      if (flag === false) {
-      } else {
-        err = err + "";
-        var err2 = err.split("(").pop();
-        err = err2.replace(")", "");
-        alert(err);
-        err = "";
-      };
-        
-      });
-  };
-
-  const SignOutUser = () => {
-    signOut(authentication)
-      .then((re) => {
-        console.log(re);
-        setIsSignedIn(false);
-      })
-      .catch((err) => {
-        
           err = err + "";
           var err2 = err.split("(").pop();
           err = err2.replace(")", "");
           alert(err);
           err = "";
-        
+        }
       });
   };
- 
 
+  const SignInUser = () => {
+    if (validateEmail(email)) {
+    } else {
+      alert("Email id is not valid please check it once.");
+      var flag = false;
+    }
+    if (password === "") {
+      alert("Please enter a Password.");
+      flag = false;
+    }
+    signInWithEmailAndPassword(authentication, email, password)
+      .then((re) => {
+        console.log(re);
+        navigate("/mainscreen");
+      })
+      .catch((err) => {
+        if (flag === false) {
+        } else {
+          err = err + "";
+          var err2 = err.split("(").pop();
+          err = err2.replace(")", "");
+          alert(err);
+          err = "";
+        }
+      });
+  };
 
+  // const SignOutUser = () => {
+  //   signOut(authentication)
+  //     .then((re) => {
+  //       console.log(re);
+  //       setIsSignedIn(false);
+  //     })
+  //     .catch((err) => {
 
+  //         err = err + "";
+  //         var err2 = err.split("(").pop();
+  //         err = err2.replace(")", "");
+  //         alert(err);
+  //         err = "";
+
+  //     });
+  // };
 
   const forgotPassword = (Email) => {
     if (validateEmail(email)) {
@@ -118,23 +101,18 @@ export default function LoginCard() {
     } else {
       alert("Email id is not valid please check it once.");
     }
-   
-    
+
     sendPasswordResetEmail(authentication, email, null)
       .then((re) => {
         console.log(re);
-       alert("reset email sent to " + email);
+        alert("reset email sent to " + email);
       })
       .catch(function (err) {
-      
         //  err = err + "";
         //  var err2 = err.split("(").pop();
         //  err = err2.replace(")", "");
         //  alert(err);
         //  err = "";
-       
-         
-        
       });
   };
 
@@ -145,10 +123,10 @@ export default function LoginCard() {
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
   };
-// const MAX_LEN = 15,
-//   MIN_LEN = 6,
-//   PASS_LABELS = ["Too Short", "Weak", "Normal", "Strong", "Secure"];
-  
+  // const MAX_LEN = 15,
+  //   MIN_LEN = 6,
+  //   PASS_LABELS = ["Too Short", "Weak", "Normal", "Strong", "Secure"];
+
   return (
     <Card sx={{ maxWidth: 1200, minWidth: 700 }}>
       {/* { <CardMedia
@@ -159,7 +137,7 @@ export default function LoginCard() {
       /> } */}
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Login / Sign Up
+          {props.title}
         </Typography>
         <FormControl fullWidth sx={{ m: 1 }}>
           <TextInput
@@ -185,9 +163,6 @@ export default function LoginCard() {
             //variant="standard"
             className="textInput"
             type="text"
-   
-        
-            
           />
         </FormControl>
         {/* <Typography variant="body2" color="text.secondary">
@@ -197,7 +172,7 @@ export default function LoginCard() {
         <br />
 
         <Button className="contained" onClick={RegisterUser}>
-          Register
+          Sign Up
         </Button>
 
         <Button className="contained" onClick={SignInUser}>
