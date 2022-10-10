@@ -34,7 +34,7 @@ export default function NavbarCommon() {
                   style={{ color: "white" }}
                   className="nav-link"
                   aria-current="page"
-                  to="SellersPage"
+                  to="/bookforsell"
                 >
                   Sell
                 </NavLink>
@@ -43,7 +43,7 @@ export default function NavbarCommon() {
                 <NavLink
                   className="nav-link"
                   style={{ color: "white" }}
-                  to="BuyersPage"
+                  to="/cart"
                 >
                   Cart
                 </NavLink>
