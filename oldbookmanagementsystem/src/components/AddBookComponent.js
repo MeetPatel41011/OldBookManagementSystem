@@ -1,4 +1,3 @@
-import React from "react";
 import LoginCard from "./LoginComponent";
 import "./LoginComponent.css";
 import NavbarCommon from "./NavbarCommon";
@@ -8,7 +7,56 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { TextInput } from "react-native";
 
+
+//firebase firestore
+import { useEffect, React, useState } from "react";
+import { app, db } from "./firebase";
+import { getFirestore } from "firebase/firestore";
+import { collection, addDoc, getDocs } from "firebase/firestore"; 
+import ItemsCard from "./ItemsCard";
+
+
 export default function AddBookComponent() {
+  const [bookName, setBookName] = useState("");
+  const [type, setType] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
+
+  const addData = async () => {
+    try {
+      const docRef = await addDoc(collection(db, "users"), {
+        BookName: bookName,
+        Type: type,
+        Description: description,
+        Price: price,
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+
+
+
+    console.log("--------");
+    const querySnapshot = await getDocs(collection(db, "users"));
+    querySnapshot.forEach((doc) => {
+      console.log(`${doc.id} => ${doc.data()}`);
+      
+//       addItem = item => {
+//   this.setState({
+//     emp: [
+//       ...this.state.emp,
+//       `${doc.data()}`
+//     ]
+//   })
+// }
+
+<ItemsCard title={`${doc.data()}`} />;
+
+      
+    });
+  };
+
   return (
     <>
       <NavbarCommon />
@@ -27,8 +75,8 @@ export default function AddBookComponent() {
             <FormControl fullWidth sx={{ m: 1 }}>
               <TextInput
                 placeholder="Name"
-                // value={email}
-                // onChangeText={(text) => setEmail(text)}
+                value={bookName}
+                onChangeText={(text) => setBookName(text)}
                 //id="standard-basic"
                 label="Phone Number / Email Address"
                 //variant="standard"
@@ -40,6 +88,8 @@ export default function AddBookComponent() {
             <FormControl fullWidth sx={{ m: 1 }}>
               <TextInput
                 placeholder="Type of book"
+                value={type}
+                onChangeText={(text) => setType(text)}
                 label="Password"
                 className="textInput"
                 type="text"
@@ -48,6 +98,8 @@ export default function AddBookComponent() {
             <FormControl fullWidth sx={{ m: 1 }}>
               <TextInput
                 placeholder="Description"
+                value={description}
+                onChangeText={(text) => setDescription(text)}
                 label="Password"
                 className="textInput"
                 type="text"
@@ -56,15 +108,19 @@ export default function AddBookComponent() {
             <FormControl fullWidth sx={{ m: 1 }}>
               <TextInput
                 placeholder="Price"
+                value={price}
+                onChangeText={(text) => setPrice(text)}
                 label="Password"
                 className="textInput"
                 type="text"
               />
             </FormControl>
-           
+
             <br />
 
-            <Button size = "large" className="contained">Add</Button>
+            <Button size="large" className="contained" onClick={addData}>
+              Add
+            </Button>
 
             {/* <Button className="contained">
           Clear

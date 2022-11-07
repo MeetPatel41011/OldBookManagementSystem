@@ -8,6 +8,8 @@ import LoginCard from "./components/LoginComponent";
 import Cart from "./components/Cart"
 import BookForSell from "./components/BookForSell";
 import AddBookComponent from "./components/AddBookComponent"
+import Testpage from "./components/Testpage"
+
 function App() {
   return (
     <>
@@ -19,7 +21,8 @@ function App() {
           <Route path="addBook" element={<LoginCard />}></Route>
           <Route path="cart" element={<Cart />}></Route>
           <Route path="bookforsell" element={<BookForSell />}></Route>
-          <Route path="addbookcomponent" element={<AddBookComponent/>}></Route>
+          <Route path="addbookcomponent" element={<AddBookComponent />}></Route>
+          <Route path="newpage" element={<Testpage />}></Route>
         </Routes>
       </BrowserRouter>
     </>
