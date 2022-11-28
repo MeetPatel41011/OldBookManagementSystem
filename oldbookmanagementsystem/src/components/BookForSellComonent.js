@@ -7,34 +7,7 @@ import { useState } from "react";
 import "./BooksComponent.css";
 import { authentication } from "./firebase";
 
-export default function BooksComponent(props) {
-
-
-  var bookName = props.booknamE ;
-    var type = props.typE;
-    var description = props.descriptioN;
-  var price = props.pricE;
-  
-  const addCart = async () => {
-  
-
-    try {
-      const docRef = await addDoc(
-        collection(db, authentication.currentUser.email),
-        {
-          BookName: bookName,
-          Type: type,
-          Description: description,
-          Price: price,
-          email: authentication.currentUser.email,
-        }
-      );
-      console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-      console.error("Error adding document: ", e);
-    }
-    console.log();
-  };
+export default function BookForSellComonent(props) {
   return (
     <>
       <NavbarCommon />
@@ -62,9 +35,6 @@ export default function BooksComponent(props) {
             <p>{props.pricE}</p>
             <p>{props.typE}</p>
             <p>{props.emaiL}</p>
-            <button className="btn" onClick={addCart}>
-              Click
-            </button>
           </div>
         </div>
       </div>

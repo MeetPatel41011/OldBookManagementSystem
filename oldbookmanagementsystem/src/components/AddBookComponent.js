@@ -7,6 +7,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { TextInput } from "react-native";
 
+import { useNavigate } from "react-router-dom";
 
 //firebase firestore
 import { useEffect, React, useState } from "react";
@@ -22,6 +23,7 @@ export default function AddBookComponent() {
   const [type, setType] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
+  const navigate = useNavigate();
 
   const addData = async () => {
     try {
@@ -33,6 +35,8 @@ export default function AddBookComponent() {
         email: authentication.currentUser.email,
       });
       console.log("Document written with ID: ", docRef.id);
+              navigate("/bookforsell");
+
     } catch (e) {
       console.error("Error adding document: ", e);
     }
