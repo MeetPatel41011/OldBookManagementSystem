@@ -100,7 +100,7 @@ export default function NavBarComponent2() {
                 placeholder="Search"
                 aria-label="Search"
               ></input>
-              <button className="btn btn-outline-success" type="submit">
+              <button type="submit">
                 Search
               </button>
             </form>

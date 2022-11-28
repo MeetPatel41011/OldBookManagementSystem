@@ -1,11 +1,22 @@
-.bookforsell{
+.bookforsell {
   background-color: #282c34;
-  min-height: 100vh;
+  padding-top: 50vh;
   display: flex;
   align-items: flex-end;
   justify-content: right;
   padding-bottom: 50px;
   padding-right: 50px;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.centerSell {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50vh;
+  align-items: center;
+  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }

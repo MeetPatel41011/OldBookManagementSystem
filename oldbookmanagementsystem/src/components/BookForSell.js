@@ -13,6 +13,9 @@ export default function BookForSell() {
   return (
     <>
       <NavbarCommon />
+      <div className="centerSell">
+        All books user want to sell will see here.
+      </div>
       <div className="bookforsell">
         <Button onClick={addBookBtn}>Add Book For Sell</Button>
       </div>

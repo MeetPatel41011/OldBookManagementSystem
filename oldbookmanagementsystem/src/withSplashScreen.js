@@ -15,7 +15,7 @@ function LoadingMessage() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          React Native
+          Old Book Management System
         </a>
       </header>
     </div>

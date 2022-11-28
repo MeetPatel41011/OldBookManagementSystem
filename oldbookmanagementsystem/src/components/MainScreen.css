@@ -1,0 +1,12 @@
+.maindiv {
+  background-color: #282c34;
+  margin-top: 49px;
+  /* width: 100%; */
+  background: linear-gradient(rgb(33,37,41), rgb(33,37,41), white);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 2fr));
+  grid-auto-rows: auto;
+  gap: 50px;
+  font-family: sans-serif;
+  padding-top: 30px;
+}

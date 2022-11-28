@@ -15,7 +15,7 @@ export default function Cart() {
           >
             MrgMeet Patel
             <br />
-            Main Page
+            Cart Page
           </a>
         </header>
       </div>

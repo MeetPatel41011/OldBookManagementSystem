@@ -37,7 +37,13 @@ export default function LoginCard(props) {
     createUserWithEmailAndPassword(authentication, email, password)
       .then((re) => {
         console.log(re);
-        navigate("/mainscreen");
+        navigate("/mainscreen",
+          // {
+          //   state: {
+          //     user: email
+          //   }
+          // }
+        );
       })
       .catch((err) => {
         if (flag === false) {
@@ -128,7 +134,7 @@ export default function LoginCard(props) {
   //   PASS_LABELS = ["Too Short", "Weak", "Normal", "Strong", "Secure"];
 
   return (
-    <Card sx={{ maxWidth: 1200, minWidth: 700 }}>
+    <Card sx={{ maxWidth: 1200, minWidth: 700 }} className="card">
       {/* { <CardMedia
         component="img"
         height="140"
@@ -171,17 +177,25 @@ export default function LoginCard(props) {
         </Typography> */}
         <br />
 
-        <Button className="contained" onClick={RegisterUser}>
-          Sign Up
-        </Button>
-
-        <Button className="contained" onClick={SignInUser}>
-          Sign In
-        </Button>
-
-        <Button className="contained" onClick={forgotPassword}>
-          forgotPassword
-        </Button>
+        <table>
+          <tr>
+            <td>
+              <button className="btn" onClick={RegisterUser}>
+                <p className="fab">Sign Up</p>
+              </button>
+            </td>
+            <td>
+              <button className="btn" onClick={SignInUser}>
+                <p className="fab">Sign In</p>
+              </button>
+            </td>
+            <td>
+              <a className="btn2" onClick={forgotPassword}>
+                Forgot Password
+              </a>
+            </td>
+          </tr>
+        </table>
         {/* {isSignedIn === true ? 
           <Button variant="contained" onClick={SignOutUser}>Sign Out</Button>
          : 

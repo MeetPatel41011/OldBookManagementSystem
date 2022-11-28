@@ -14,6 +14,7 @@ import { app, db } from "./firebase";
 import { getFirestore } from "firebase/firestore";
 import { collection, addDoc, getDocs } from "firebase/firestore"; 
 import ItemsCard from "./ItemsCard";
+import { authentication } from "./firebase";
 
 
 export default function AddBookComponent() {
@@ -29,12 +30,13 @@ export default function AddBookComponent() {
         Type: type,
         Description: description,
         Price: price,
+        email: authentication.currentUser.email,
       });
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
       console.error("Error adding document: ", e);
     }
-
+console.log();
 
 
     console.log("--------");
@@ -51,7 +53,6 @@ export default function AddBookComponent() {
 //   })
 // }
 
-<ItemsCard title={`${doc.data()}`} />;
 
       
     });
@@ -78,7 +79,7 @@ export default function AddBookComponent() {
                 value={bookName}
                 onChangeText={(text) => setBookName(text)}
                 //id="standard-basic"
-                label="Phone Number / Email Address"
+                // label="Phone Number / Email Address"
                 //variant="standard"
                 className="textInput"
                 type="text"
