@@ -10,45 +10,16 @@ import ParticularBookComponent from "./ParticularBookComponent";
 
 import logo from "./logo.svg";
 
-export default function BooksComponent(props) {
+export default function FirstScreenCards(props) {
   var bookName = props.booknamE;
   var type = props.typE;
   var description = props.descriptioN;
   var price = props.pricE;
 
-  const addCart = async () => {
-    try {
-      const docRef = await addDoc(
-        collection(db, authentication.currentUser.email),
-        {
-          BookName: bookName,
-          Type: type,
-          Description: description,
-          Price: price,
-          email: authentication.currentUser.email,
-        }
-      );
-      console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-      console.error("Error adding document: ", e);
-    }
-    console.log();
-  };
 
-  // function  GoToParticular() {
-  //         navigate("/mainscreen",
-
-  //     booknamE={props.booknamE}
-  //     typE={props.typE}
-  //     descriptioN={props.descriptioN}
-  //     pricE={props.pricE}
-  //     emaiL={props.emaiL}
-  //         )
-
-  // };
   return (
     <>
-      <NavbarCommon />
+      <NavBarComponent2 />
 
       {/* <a
             className="App-link"
@@ -74,9 +45,6 @@ export default function BooksComponent(props) {
             <p>{props.pricE}</p>
             <p>{props.typE}</p>
             <p>{props.emaiL}</p>
-            <button className="addtocart" onClick={addCart}>
-              Add to Cart
-            </button>
           </div>
         </div>
       </div>

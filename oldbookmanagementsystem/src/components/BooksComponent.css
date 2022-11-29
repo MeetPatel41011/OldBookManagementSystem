@@ -2,10 +2,10 @@
 
 .cardbooks {
   /* margin: 30px auto; */
-  width: 300px;
+  width: 400px;
   height: 300px;
   border-radius: 40px;
-box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+
   cursor: pointer;
   transition: 0.4s;
 
@@ -31,9 +31,11 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   border-radius: 0px 0px 40px 40px;
   font-family: sans-serif;
   font-weight: bold;
-  font-size: 30px;
-  margin-top: -280px;
+  font-size: 20px;
+  margin-top: -320px;
+  padding-top: 0.11px;
   height: 40px;
+  position:relative;
 }
 
 .cardbooks:hover {
@@ -65,3 +67,15 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 
 
 
+.addtocart{
+  color: white;
+  position:relative;
+  background-color: #51adc7;
+  border: none;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.cardlogo{
+  opacity: 0.1;
+}

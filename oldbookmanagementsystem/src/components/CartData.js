@@ -7,33 +7,10 @@ import { useState } from "react";
 import "./BooksComponent.css";
 import { authentication } from "./firebase";
 import ParticularBookComponent from "./ParticularBookComponent";
-
 import logo from "./logo.svg";
+import "./CartData.css";
 
-export default function BooksComponent(props) {
-  var bookName = props.booknamE;
-  var type = props.typE;
-  var description = props.descriptioN;
-  var price = props.pricE;
-
-  const addCart = async () => {
-    try {
-      const docRef = await addDoc(
-        collection(db, authentication.currentUser.email),
-        {
-          BookName: bookName,
-          Type: type,
-          Description: description,
-          Price: price,
-          email: authentication.currentUser.email,
-        }
-      );
-      console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-      console.error("Error adding document: ", e);
-    }
-    console.log();
-  };
+export default function CartData(props) {  
 
   // function  GoToParticular() {
   //         navigate("/mainscreen",
@@ -65,7 +42,11 @@ export default function BooksComponent(props) {
         <div className="cardbooks">
           <div className="cardbooks_image btn">
             {" "}
-            <img src={logo} className="App-logo cardlogo" alt="logo" />
+            <img
+              src={logo}
+              className="App-logo BookForSellComonent"
+              alt="logo"
+            />
           </div>
 
           <div className="cardbooks_title title-white">
@@ -74,9 +55,6 @@ export default function BooksComponent(props) {
             <p>{props.pricE}</p>
             <p>{props.typE}</p>
             <p>{props.emaiL}</p>
-            <button className="addtocart" onClick={addCart}>
-              Add to Cart
-            </button>
           </div>
         </div>
       </div>

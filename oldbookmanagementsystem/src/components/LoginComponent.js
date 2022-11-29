@@ -37,13 +37,7 @@ export default function LoginCard(props) {
     createUserWithEmailAndPassword(authentication, email, password)
       .then((re) => {
         console.log(re);
-        navigate("/mainscreen",
-          // {
-          //   state: {
-          //     user: email
-          //   }
-          // }
-        );
+        navigate("/mainscreen");
       })
       .catch((err) => {
         if (flag === false) {
@@ -158,11 +152,11 @@ export default function LoginCard(props) {
           />
         </FormControl>
         <br />
-        <FormControl fullWidth sx={{ m: 1 }}>
+        <FormControl fullWidth sx={{ m: 1 }} className="passtextinput">
           <TextInput
             placeholder="Password"
             value={password}
-            //secureTextEntry={true}
+            secureTextEntry={true} //task
             onChangeText={(text) => setPassword(text)}
             //id="standard-basic"
             label="Password"

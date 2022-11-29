@@ -10,7 +10,7 @@ import ParticularBookComponent from "./ParticularBookComponent";
 
 import logo from "./logo.svg";
 
-export default function BooksComponent(props) {
+export default function BooksComponentOWN(props) {
   var bookName = props.booknamE;
   var type = props.typE;
   var description = props.descriptioN;
@@ -74,9 +74,9 @@ export default function BooksComponent(props) {
             <p>{props.pricE}</p>
             <p>{props.typE}</p>
             <p>{props.emaiL}</p>
-            <button className="addtocart" onClick={addCart}>
+            {/* <button className="addtocart" onClick={addCart}>
               Add to Cart
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

@@ -93,7 +93,7 @@ export default function NavBarComponent2() {
                 <button className="nav-link disabled">Disabled</button>
               </li>*/}
             </ul>
-            <form className="d-flex" role="search">
+            {/* <form className="d-flex" role="search">
               <input
                 className="form-control me-2"
                 type="search"
@@ -103,7 +103,7 @@ export default function NavBarComponent2() {
               <button type="submit">
                 Search
               </button>
-            </form>
+            </form> */}
           </div>
         </div>
       </nav>

@@ -6,7 +6,8 @@ import { app, db } from "./firebase";
 import { useState } from "react";
 import "./BooksComponent.css";
 import { authentication } from "./firebase";
-
+import logo from "./logo.svg";
+import "./BookForSellComonent.css";
 export default function BookForSellComonent(props) {
   return (
     <>
@@ -27,7 +28,11 @@ export default function BookForSellComonent(props) {
         <div className="cardbooks">
           <div className="cardbooks_image">
             {" "}
-            <img src="https://i.redd.it/b3esnz5ra34y.jpg" />{" "}
+            <img
+              src={logo}
+              className="App-logo BookForSellComonent"
+              alt="logo"
+            />
           </div>
           <div className="cardbooks_title title-white">
             <p>{props.booknamE}</p>

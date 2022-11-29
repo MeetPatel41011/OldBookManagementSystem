@@ -6,11 +6,8 @@ import { app, db } from "./firebase";
 import { useState } from "react";
 import "./BooksComponent.css";
 import { authentication } from "./firebase";
-import ParticularBookComponent from "./ParticularBookComponent";
 
-import logo from "./logo.svg";
-
-export default function BooksComponent(props) {
+export default function ParticularBookComponent(props) {
   var bookName = props.booknamE;
   var type = props.typE;
   var description = props.descriptioN;
@@ -34,18 +31,6 @@ export default function BooksComponent(props) {
     }
     console.log();
   };
-
-  // function  GoToParticular() {
-  //         navigate("/mainscreen",
-
-  //     booknamE={props.booknamE}
-  //     typE={props.typE}
-  //     descriptioN={props.descriptioN}
-  //     pricE={props.pricE}
-  //     emaiL={props.emaiL}
-  //         )
-
-  // };
   return (
     <>
       <NavbarCommon />
@@ -61,21 +46,20 @@ export default function BooksComponent(props) {
             Main Page
           </a> */}
 
-      <div className="main">
+      <div className="main" onClick={this.changeColor}>
         <div className="cardbooks">
-          <div className="cardbooks_image btn">
+          <div className="cardbooks_image">
             {" "}
-            <img src={logo} className="App-logo cardlogo" alt="logo" />
+            <img src="https://i.redd.it/b3esnz5ra34y.jpg" />{" "}
           </div>
-
           <div className="cardbooks_title title-white">
             <p>{props.booknamE}</p>
             <p>{props.descriptioN}</p>
             <p>{props.pricE}</p>
             <p>{props.typE}</p>
             <p>{props.emaiL}</p>
-            <button className="addtocart" onClick={addCart}>
-              Add to Cart
+            <button className="btn" onClick={addCart}>
+              Click
             </button>
           </div>
         </div>
