@@ -7,7 +7,8 @@ import { useState } from "react";
 import "./BooksComponent.css";
 import { authentication } from "./firebase";
 import ParticularBookComponent from "./ParticularBookComponent";
-
+import "./BooksComponent.css";
+import "./BookForSellComonent.css";
 import logo from "./logo.svg";
 
 export default function BooksComponent(props) {
@@ -15,7 +16,7 @@ export default function BooksComponent(props) {
   var type = props.typE;
   var description = props.descriptioN;
   var price = props.pricE;
-
+var eamill = props.emaiL;
   const addCart = async () => {
     try {
       const docRef = await addDoc(
@@ -25,7 +26,7 @@ export default function BooksComponent(props) {
           Type: type,
           Description: description,
           Price: price,
-          email: authentication.currentUser.email,
+          email: eamill,
         }
       );
       console.log("Document written with ID: ", docRef.id);
@@ -63,7 +64,7 @@ export default function BooksComponent(props) {
 
       <div className="main">
         <div className="cardbooks">
-          <div className="cardbooks_image btn">
+          <div className="cardbooks_image">
             {" "}
             <img src={logo} className="App-logo cardlogo" alt="logo" />
           </div>

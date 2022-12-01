@@ -34,7 +34,7 @@ export default function FirstScreenCards(props) {
 
       <div className="main">
         <div className="cardbooks">
-          <div className="cardbooks_image btn">
+          <div className="cardbooks_image">
             {" "}
             <img src={logo} className="App-logo cardlogo" alt="logo" />
           </div>

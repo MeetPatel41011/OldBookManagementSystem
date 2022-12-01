@@ -40,7 +40,7 @@ export default function CartData(props) {
 
       <div className="main">
         <div className="cardbooks">
-          <div className="cardbooks_image btn">
+          <div className="cardbooks_image">
             {" "}
             <img
               src={logo}

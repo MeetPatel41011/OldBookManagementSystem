@@ -156,7 +156,7 @@ export default function LoginCard(props) {
           <TextInput
             placeholder="Password"
             value={password}
-            secureTextEntry={true} //task
+            secureTextEntry={true} 
             onChangeText={(text) => setPassword(text)}
             //id="standard-basic"
             label="Password"

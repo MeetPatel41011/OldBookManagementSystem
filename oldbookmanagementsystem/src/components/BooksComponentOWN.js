@@ -4,9 +4,10 @@ import NavbarCommon from "./NavbarCommon";
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import { app, db } from "./firebase";
 import { useState } from "react";
-import "./BooksComponent.css";
 import { authentication } from "./firebase";
 import ParticularBookComponent from "./ParticularBookComponent";
+import "./BooksComponent.css";
+import "./BookForSellComonent.css";
 
 import logo from "./logo.svg";
 
@@ -63,7 +64,7 @@ export default function BooksComponentOWN(props) {
 
       <div className="main">
         <div className="cardbooks">
-          <div className="cardbooks_image btn">
+          <div className="cardbooks_image">
             {" "}
             <img src={logo} className="App-logo cardlogo" alt="logo" />
           </div>
