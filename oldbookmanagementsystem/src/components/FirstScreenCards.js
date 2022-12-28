@@ -16,7 +16,6 @@ export default function FirstScreenCards(props) {
   var description = props.descriptioN;
   var price = props.pricE;
 
-
   return (
     <>
       <NavBarComponent2 />

@@ -16,7 +16,7 @@ export default function BooksComponent(props) {
   var type = props.typE;
   var description = props.descriptioN;
   var price = props.pricE;
-var eamill = props.emaiL;
+  var eamill = props.emaiL;
   const addCart = async () => {
     try {
       const docRef = await addDoc(

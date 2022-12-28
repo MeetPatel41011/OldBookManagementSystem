@@ -10,7 +10,6 @@ import "./BooksComponent.css";
 import "./BookForSellComonent.css";
 
 import logo from "./logo.svg";
-
 export default function BooksComponentOWN(props) {
   var bookName = props.booknamE;
   var type = props.typE;

@@ -10,8 +10,7 @@ import ParticularBookComponent from "./ParticularBookComponent";
 import logo from "./logo.svg";
 import "./CartData.css";
 
-export default function CartData(props) {  
-
+export default function CartData(props) {
   // function  GoToParticular() {
   //         navigate("/mainscreen",
 

@@ -9,7 +9,6 @@ import { async } from "@firebase/util";
 import "./MainScreen.css";
 import BooksComponentOWN from "./BooksComponentOWN";
 
-
 export default function MainPage() {
   const [bookName, setBookName] = useState("");
   const [description, setDescription] = useState("");
@@ -86,7 +85,6 @@ export default function MainPage() {
           }
         })}
       </div>
-      
     </>
   );
 }
