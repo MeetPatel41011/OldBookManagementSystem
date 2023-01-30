@@ -39,10 +39,9 @@ export default function AddBookComponent() {
       } catch (e) {
         console.error("Error adding document: ", e);
       }
-alert("Data Added");
-    }
-    else {
-      alert("Please add Data")
+      alert("Data Added");
+    } else {
+      alert("Please add Data");
     }
   };
 
