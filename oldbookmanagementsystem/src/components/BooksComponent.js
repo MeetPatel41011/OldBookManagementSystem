@@ -17,6 +17,7 @@ export default function BooksComponent(props) {
   var description = props.descriptioN;
   var price = props.pricE;
   var eamill = props.emaiL;
+  
   const addCart = async () => {
     try {
       const docRef = await addDoc(
@@ -33,7 +34,8 @@ export default function BooksComponent(props) {
     } catch (e) {
       console.error("Error adding document: ", e);
     }
-    console.log();
+    // console.log();
+    alert("Added to cart")
   };
 
   // function  GoToParticular() {

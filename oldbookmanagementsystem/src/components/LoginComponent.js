@@ -16,7 +16,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import "./LoginComponent.css";
 
-export default function LoginCard(props) {
+export default function LoginComponent(props) {
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -145,7 +145,7 @@ export default function LoginCard(props) {
             value={email}
             onChangeText={(text) => setEmail(text)}
             //id="standard-basic"
-            label="Phone Number / Email Address"
+            // label="Email"
             //variant="standard"
             className="textInput"
             type="text"
@@ -156,10 +156,11 @@ export default function LoginCard(props) {
           <TextInput
             placeholder="Password"
             value={password}
-            secureTextEntry={true}
+            // secureTextEntry={true}
+            password={true}
             onChangeText={(text) => setPassword(text)}
             //id="standard-basic"
-            label="Password"
+            // label="Password"
             //variant="standard"
             className="textInput"
             type="text"

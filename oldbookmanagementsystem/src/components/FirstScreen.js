@@ -24,8 +24,8 @@ export default function FirstScreen() {
     const ReadData = async () => {
       const querySnapshot = await getDocs(collection(db, "users"));
       querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data()}`);
-        console.log(bookName);
+        // console.log(`${doc.id} => ${doc.data()}`);
+        // console.log(bookName);
         var id = String(doc.id);
         nameDict[id] = doc.data().BookName;
         discription_dict[id] = doc.data().Description;
@@ -37,7 +37,7 @@ export default function FirstScreen() {
         setPrice(type_dict);
         setType(price_dict);
         setEmail(eamil_dict);
-        console.log(typeof bookName);
+        // console.log(typeof bookName);
       });
     };
     ReadData();
@@ -55,7 +55,7 @@ export default function FirstScreen() {
                 descriptioN={description[key]}
                 pricE={price[key]}
                 typE={type[key]}
-                emaiL={email[key]}
+                // emaiL={email[key]}
               />
             </div>
           );

@@ -16,24 +16,7 @@ export default function BooksComponentOWN(props) {
   var description = props.descriptioN;
   var price = props.pricE;
 
-  const addCart = async () => {
-    try {
-      const docRef = await addDoc(
-        collection(db, authentication.currentUser.email),
-        {
-          BookName: bookName,
-          Type: type,
-          Description: description,
-          Price: price,
-          email: authentication.currentUser.email,
-        }
-      );
-      console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-      console.error("Error adding document: ", e);
-    }
-    console.log();
-  };
+ 
 
   // function  GoToParticular() {
   //         navigate("/mainscreen",

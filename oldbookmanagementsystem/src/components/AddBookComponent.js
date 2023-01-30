@@ -25,35 +25,25 @@ export default function AddBookComponent() {
   const navigate = useNavigate();
 
   const addData = async () => {
-    try {
-      const docRef = await addDoc(collection(db, "users"), {
-        BookName: bookName,
-        Type: type,
-        Description: description,
-        Price: price,
-        email: authentication.currentUser.email,
-      });
-      console.log("Document written with ID: ", docRef.id);
-      navigate("/bookforsell");
-    } catch (e) {
-      console.error("Error adding document: ", e);
+    if (bookName !== "") {
+      try {
+        const docRef = await addDoc(collection(db, "users"), {
+          BookName: bookName,
+          Type: type,
+          Description: description,
+          Price: price,
+          email: authentication.currentUser.email,
+        });
+        console.log("Document written with ID: ", docRef.id);
+        navigate("/bookforsell");
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
+alert("Data Added");
     }
-    console.log();
-
-    console.log("--------");
-    const querySnapshot = await getDocs(collection(db, "users"));
-    querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data()}`);
-
-      //       addItem = item => {
-      //   this.setState({
-      //     emp: [
-      //       ...this.state.emp,
-      //       `${doc.data()}`
-      //     ]
-      //   })
-      // }
-    });
+    else {
+      alert("Please add Data")
+    }
   };
 
   return (
@@ -81,6 +71,7 @@ export default function AddBookComponent() {
                 //variant="standard"
                 className="textInput"
                 type="text"
+                 
               />
             </FormControl>
             <br />

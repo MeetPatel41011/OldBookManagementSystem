@@ -28,8 +28,8 @@ export default function Cart() {
          collection(db, authentication.currentUser.email)
        );
        querySnapshot.forEach((doc) => {
-         console.log(`${doc.id} => ${doc.data()}`);
-         console.log(bookName);
+        //  console.log(`${doc.id} => ${doc.data()}`);
+        //  console.log(bookName);
          var id = String(doc.id);
          nameDict[id] = doc.data().BookName;
          discription_dict[id] = doc.data().Description;
@@ -41,7 +41,7 @@ export default function Cart() {
          setPrice(type_dict);
          setType(price_dict);
          setEmail(eamil_dict);
-         console.log(typeof bookName);
+        //  console.log(typeof bookName);
        });
      };
      ReadData();

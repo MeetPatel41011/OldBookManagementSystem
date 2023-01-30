@@ -54,7 +54,12 @@ export default function NavBarComponent2() {
                   style={{ color: "white" }}
                   to="login-signup"
                 >
-                  Login/sign Up
+                  Login/Sign Up
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" style={{ color: "#cbcbcb" }}>
+                  Login/SignUp to see users contact
                 </NavLink>
               </li>
               {/* <li className="nav-item dropdown">

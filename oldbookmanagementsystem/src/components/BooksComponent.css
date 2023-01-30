@@ -1,5 +1,3 @@
-
-
 .cardbooks {
   /* margin: 30px auto; */
   width: 400px;
@@ -8,9 +6,6 @@
 
   cursor: pointer;
   transition: 0.4s;
-
-
-  
 }
 
 .cardbooks .cardbooks_image {
@@ -35,13 +30,13 @@
   margin-top: -320px;
   padding-top: 0.11px;
   height: 40px;
-  position:relative;
+  position: relative;
 }
 
 .cardbooks:hover {
   transform: scale(0.9, 0.9);
-  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
-    -5px -5px 30px 15px rgba(0,0,0,0.22);
+  box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
+    -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
 }
 
 .title-white {
@@ -55,27 +50,25 @@
 /* /* @media all and (max-width: 500px) {
   .cardbooks-list {
     /* On small screens, we are no longer using row direction but column */
-    /* flex-direction: column;
+/* flex-direction: column;
   }
-} */  
+} */
 
-.main{
+.main {
   padding-left: 30px;
   padding-left: 30px;
   width: 100%;
 }
 
-
-
-.addtocart{
+.addtocart {
   color: white;
-  position:relative;
+  position: relative;
   background-color: #51adc7;
   border: none;
   border-radius: 20px;
   padding-left: 10px;
   padding-right: 10px;
 }
-.cardlogo{
+.cardlogo {
   opacity: 0.1;
 }

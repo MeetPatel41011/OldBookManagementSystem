@@ -17,6 +17,9 @@ function LoadingMessage() {
         >
           Old Book Management System
         </a>
+        <p>
+          Made with ❤ by Meet Patel
+        </p>
       </header>
     </div>
   );
@@ -38,9 +41,9 @@ function withSplashScreen(WrappedComponent) {
           this.setState({
             loading: false,
           });
-        }, 1500);
+        }, 1800);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
         this.setState({
           loading: false,
         });
