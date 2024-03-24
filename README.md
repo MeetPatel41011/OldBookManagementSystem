@@ -1,6 +1,8 @@
 # To run this project
-go to: OldBookManagementSystem/oldbookmanagementsystem
+Go to: OldBookManagementSystem/oldbookmanagementsystem
+
 and run,
+
 ```npm install```
 ```npm run build```
 
